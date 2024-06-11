@@ -1,5 +1,5 @@
 #include <gmock/gmock.h>
-#include "store.hpp"
+#include <store.hpp>
 
 struct StoreMock : Store
 {
