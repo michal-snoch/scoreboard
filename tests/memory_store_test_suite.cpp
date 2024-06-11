@@ -44,7 +44,7 @@ TEST_F(MemoryStoreTestSuite, successfulUpdateOfExistingRecord)
     store.createOrUpdate(sampleEntry2.homeTeam, sampleEntry2.awayTeam, sampleEntry2.homeScore, sampleEntry2.awayScore);
 
     const auto& entries = store.getAll();
-    EXPECT_EQ(1u, entries.size());
+    EXPECT_EQ(2u, entries.size());
 
     const auto& entry = *entries.begin();
     assertEntry(sampleEntry1, *entries.begin());
@@ -54,7 +54,7 @@ TEST_F(MemoryStoreTestSuite, successfulUpdateOfExistingRecord)
 
     store.createOrUpdate(sampleEntry1.homeTeam, sampleEntry1.awayTeam, homeTeamNewScore, awayTeamNewScore);
 
-    EXPECT_EQ(1u, entries.size());
+    EXPECT_EQ(2u, entries.size());
 
     Store::Entry updatedEntry {
         sampleEntry1.homeTeam,
