@@ -1,8 +1,10 @@
+#pragma once
+
 #include <list>
 #include <string>
 
-class ScoreReader
+struct ScoreReader
 {
-    virtual std::list<std::string> getGamesSummary() const = 0
+    virtual std::list<std::string> getGamesSummary() const = 0;
     virtual ~ScoreReader() {}
-}
+};
