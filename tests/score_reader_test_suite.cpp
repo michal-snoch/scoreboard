@@ -48,8 +48,8 @@ TEST_F(ScoreReaderTestSuite, storeOrderPreservedIfResultsSummaryEqual)
 
     std::list<std::string> expectedResult = {
         "T1 3 - T2 4",
-        "T3 2 - T4 1",
         "T7 1 - T8 2",
+        "T3 2 - T4 1",
         "T5 0 - T6 0"
     };
 
