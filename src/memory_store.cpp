@@ -1,5 +1,4 @@
 #include <memory_store.hpp>
-#include <exception>
 
 void MemoryStore::createOrUpdate(std::string homeTeam, std::string awayTeam, uint16_t homeScore, uint16_t awayScore)
 {

@@ -19,4 +19,9 @@ enter workdir
 mkdir build
 cd build
 cmake ..
-make`
+make
+```
+
+`ScoreBoardTests` and `libScoreBoardLib.a` are created as a result.
+
+To execute tests run `./ScoreBoardTests` from `build` directory

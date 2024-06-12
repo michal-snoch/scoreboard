@@ -1,7 +1,6 @@
 #include <score_board.hpp>
 #include <algorithm>
 #include <format>
-#include <exception>
 
 ScoreBoard::ScoreBoard(Store& store) : store(store)
 {
