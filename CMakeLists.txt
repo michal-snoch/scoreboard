@@ -12,7 +12,8 @@ target_include_directories(ScoreBoardLib PRIVATE ${PROJECT_SOURCE_DIR}/include)
 add_subdirectory(googletest)
 
 add_executable(ScoreBoardTests tests/memory_store_test_suite.cpp
-                               tests/score_reader_test_suite.cpp                                
+                               tests/score_reader_test_suite.cpp
+                               tests/score_updater_test_suite.cpp                             
 )
 target_include_directories(ScoreBoardTests PRIVATE ${PROJECT_SOURCE_DIR}/include)
 target_link_libraries(ScoreBoardTests gtest gmock gtest_main ScoreBoardLib)

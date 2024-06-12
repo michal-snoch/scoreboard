@@ -1,6 +1,7 @@
 #include <score_board.hpp>
 #include <algorithm>
 #include <format>
+#include <exception>
 
 ScoreBoard::ScoreBoard(Store& store) : store(store)
 {
@@ -21,4 +22,19 @@ std::list<std::string> ScoreBoard::getGamesSummary() const
     }
 
     return result;
+}
+
+void ScoreBoard::startNewGame(std::string homeTeam, std::string awayTeam)
+{
+    throw std::logic_error("Not implemented");
+}
+
+void ScoreBoard::updateScore(std::string homeTeam, std::string awayTeam, uint16_t homeScore, uint16_t awayScore)
+{
+    throw std::logic_error("Not implemented");
+}
+
+void ScoreBoard::finishGame(std::string homeTeam, std::string awayTeam)
+{
+    throw std::logic_error("Not implemented");
 }
