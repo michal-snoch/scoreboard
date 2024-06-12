@@ -9,4 +9,7 @@ public:
     ScoreBoard(Store& store);
     virtual std::list<std::string> getGamesSummary() const;
     virtual ~ScoreBoard() = default;
+
+private:
+    Store& store;
 };
