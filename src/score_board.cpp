@@ -26,15 +26,45 @@ std::list<std::string> ScoreBoard::getGamesSummary() const
 
 void ScoreBoard::startNewGame(std::string homeTeam, std::string awayTeam)
 {
-    throw std::logic_error("Not implemented");
+    const auto& storedEntries = store.getAll();
+    
+    if (std::find_if(storedEntries.begin(), storedEntries.end(), 
+        [&](const auto& e) { return e.homeTeam == homeTeam && e.awayTeam == awayTeam; }
+    ) != storedEntries.end()) 
+    {
+        // game already exists
+        return;
+    }
+
+    store.createOrUpdate(homeTeam, awayTeam, 0u, 0u);
 }
 
 void ScoreBoard::updateScore(std::string homeTeam, std::string awayTeam, uint16_t homeScore, uint16_t awayScore)
 {
-    throw std::logic_error("Not implemented");
+    const auto& storedEntries = store.getAll();
+    
+    if (std::find_if(storedEntries.begin(), storedEntries.end(), 
+        [&](const auto& e) { return e.homeTeam == homeTeam && e.awayTeam == awayTeam; }
+    ) != storedEntries.end()) 
+    {
+        store.createOrUpdate(homeTeam, awayTeam, homeScore, awayScore);
+        return;
+    }
+
+    // no game found
 }
 
 void ScoreBoard::finishGame(std::string homeTeam, std::string awayTeam)
 {
-    throw std::logic_error("Not implemented");
+    const auto& storedEntries = store.getAll();
+    
+    if (std::find_if(storedEntries.begin(), storedEntries.end(), 
+        [&](const auto& e) { return e.homeTeam == homeTeam && e.awayTeam == awayTeam; }
+    ) != storedEntries.end()) 
+    {
+        store.remove(homeTeam, awayTeam);
+        return;
+    }
+
+    // no game found
 }
